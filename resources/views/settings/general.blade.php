@@ -10,11 +10,7 @@
                     class="text-danger">*</span>
             {{ Form::text('application_name', $setting['application_name'], ['class' => 'form-control', 'required']) }}
         </div>
-        <div class="form-group col-sm-6">
-            {{ Form::label('application_name', __('messages.setting.company_url').':') }}<span
-                    class="text-danger">*</span>
-            {{ Form::text('company_url', $setting['company_url'], ['class' => 'form-control', 'required']) }}
-        </div>
+       
         <div class="form-group col-sm-12 my-0">
             {{ Form::label('company_description', __('messages.setting.company_description').':') }}<span
                     class="text-danger">*</span>
