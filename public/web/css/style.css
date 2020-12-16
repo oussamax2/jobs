@@ -195,7 +195,7 @@ section {
 }
 
 a {
-    color: #6777ef;
+    color: #087fff;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
     -ms-transition: all .3s ease;
@@ -205,7 +205,7 @@ a {
 
 a:hover,
 a:focus {
-    color: #6777ef;
+    color: #087fff;
 }
 
 a:hover,
@@ -452,7 +452,7 @@ img {
 }
 
 .text-purple {
-    color: #6777ef !important;
+    color: #087fff !important;
 }
 
 .text-orange {
@@ -478,7 +478,7 @@ img {
     content: '';
     width: 50px;
     height: 3px;
-    background: #6777ef;
+    background: #087fff;
     display: block;
     margin: 0 auto;
     margin-top: 20px;
@@ -1235,8 +1235,8 @@ ul.list {
 
 .btn-purple {
     box-shadow: 0 2px 6px #acb5f6;
-    background-color: #6777ef;
-    border-color: #6777ef;
+    background-color: #087fff;
+    border-color: #087fff;
     color: #fff;
 }
 
@@ -1382,7 +1382,7 @@ ul.list {
     left: 3px;
     font-size: 18px;
     line-height: 1;
-    color: #6777ef;
+    color: #087fff;
     -webkit-transition: all .2s;
     -moz-transition: all .2s;
     -ms-transition: all .2s;
@@ -1913,7 +1913,7 @@ div#main-nav {
 }
 
 .navbar .navbar-nav > li > a:hover {
-    color: #6777ef;
+    color: #087fff;
     -webkit-transition: 0.3s ease-in;
     -moz-transition: 0.3s ease-in;
     -ms-transition: 0.3s ease-in;
@@ -1925,7 +1925,7 @@ div#main-nav {
 .navbar-default .navbar-nav > .active > a:focus,
 .navbar-default .navbar-nav > .active > a:hover {
     background: none !important;
-    color: #6777ef;
+    color: #087fff;
 }
 
 .navbar .navbar-nav > li > a i {
@@ -1938,7 +1938,7 @@ div#main-nav {
 }
 
 .navbar .navbar-nav > li.login-btn > a {
-    background: #6777ef;
+    background: #087fff;
     color: #f6f6f6 !important;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -2266,7 +2266,7 @@ header.sticky {
     height: 50px;
     line-height: 50px;
     font-weight: 600;
-    background: #6777ef;
+    background: #087fff;
     color: #fff;
     font-size: 18px;
     text-transform: uppercase;
@@ -2279,7 +2279,7 @@ header.sticky {
 }
 
 /*.cd-user-modal-container .cd-switcher a:hover {*/
-/*    background: #6777ef;*/
+/*    background: #087fff;*/
 /*}*/
 
 .cd-user-modal-container .cd-switcher a.selected {
@@ -2372,7 +2372,7 @@ header.sticky {
 }
 
 .cd-form input.has-border:focus {
-    border-color: #6777ef;
+    border-color: #087fff;
     outline: none;
 }
 
@@ -2401,7 +2401,7 @@ header.sticky {
 }
 
 form.cd-form button {
-    background: #6777ef;
+    background: #087fff;
     display: block;
     margin: 0 auto;
     color: #323232;
@@ -3456,7 +3456,7 @@ section#job-post {
 /*}*/
 
 .job-post-wrapper .single-job-post:hover {
-    border: 1px solid #6777ef;
+    border: 1px solid #087fff;
 }
 
 .job-post-wrapper .single-job-post .job-company {
@@ -3529,8 +3529,8 @@ ul.pagination {
 .page-link, .page-item span {
     font-size: 16px;
     color: #f6f6f6;
-    background: #6777ef;
-    border: 2px solid #6777ef;
+    background: #087fff;
+    border: 2px solid #087fff;
     box-shadow: 0 2px 6px #acb5f6;
     padding: 7px 14px;
     -webkit-border-radius: 5px;
@@ -3554,15 +3554,15 @@ ul.pagination li button:hover,
 ul.pagination li span:focus
 ul.pagination li button:focus {
     background: none;
-    color: #6777ef;
-    border-color: #6777ef;
+    color: #087fff;
+    border-color: #087fff;
 }
 
 ul.pagination li.active .page-link {
     font-size: 16px !important;
-    color: #6777ef;
+    color: #087fff;
     background: none;
-    border: 2px solid #6777ef;
+    border: 2px solid #087fff;
     box-shadow: 0 2px 6px #acb5f6;
     padding: 9px 15px !important;
     margin-left: 1px;
@@ -4472,7 +4472,7 @@ section.find-candidate .candidate-wrapper .single-candidate {
 /*}*/
 
 section.find-candidate .candidate-wrapper .single-candidate:hover {
-    border: 1px solid #6777ef;
+    border: 1px solid #087fff;
 }
 
 section.find-candidate .candidate-wrapper .single-candidate .candidate-img {
@@ -5722,12 +5722,12 @@ section#register .nav-tabs > li {
 
 section#register .nav-tabs > li.active > a {
     color: #333;
-    border-top: 3px solid #6777ef;
+    border-top: 3px solid #087fff;
 }
 
 section#register .nav-tabs > li.active > a:hover {
     background: #fff;
-    border-top: 3px solid #6777ef;
+    border-top: 3px solid #087fff;
     border-right: 1px solid #e3e3e3;
     border-bottom: 1px solid #fff;
     border-left: 1px solid #e3e3e3;
