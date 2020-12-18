@@ -53,6 +53,20 @@
                             <a href="{{ route('front.post.lists') }}"
                                class="j-nav-item">{{ __('messages.post.blog') }}</a>
                         </li>
+                        <li class="dropdown">
+	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    		{{ config('languages')[app()->getLocale()] }} <span class="caret"></span>
+	</a>
+	<ul class="dropdown-menu">
+		@foreach (config('languages') as $lang => $language)
+	        @if ($lang != app()->getLocale())
+	            <li>
+	                <a href="{{ route('lang.switch', $lang) }}">{{$language}}</a>
+	            </li>
+	        @endif
+	    @endforeach
+	</ul>
+</li>
                         @auth
                             <li class="dropdown simple-menu">
                                 <a href="#" class="dropdown-toggle user-avatar" data-toggle="dropdown" role="button">
@@ -85,6 +99,7 @@
                                             class="fa fa-lock"></i> {{ __('web.login') }}</a>
                             </li>
                         @endauth
+                        
                     </ul>
                 </div>
                 <!-- End of Main Nav -->
