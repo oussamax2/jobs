@@ -112,5 +112,19 @@ class LanguageController extends AppBaseController
         return $this->sendSuccess('Language Deleted Successfully.');
     }
 
+
+    public function switchLang($lang)
+	{
+		if (isset(config('languages')[$lang])) {
+			session()->put('locale', $lang);
+			$user = auth()->user();
+			if($user) {
+				$user->language = $lang;
+				$user->save();
+			}
+		}
+		return redirect()->back();
+	}
+
     
 }

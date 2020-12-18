@@ -479,3 +479,4 @@ Route::group(['middleware' => ['auth', 'role:Candidate', 'xss', 'verified.user']
     Route::get('apply-job/{jobId}', 'Web\JobApplicationController@showApplyJobForm')->name('show.apply-job-form');
 
 });
+Route::get('lang/{lang}', 'LanguageController@switchLang')->name('lang.switch');
