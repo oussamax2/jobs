@@ -56,6 +56,7 @@ return [
     'testimonials' => 'Témoignages',
     'jobs_offers_for' => 'Offres d\'emploi pour',
     'vous' => 'vous',
+    'featured_jobs' => 'Emplois en vedette',
     'positions_open' => 'Positions ouvertes',
     'position_open' => 'Position ouverte',
     'latest_job_not_available' => 'Le dernier travail n\'est pas disponible.',

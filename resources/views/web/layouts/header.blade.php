@@ -4,7 +4,7 @@
         <div class="container">
 
             <!-- Logo -->
-            <div class="col-md-2 col-sm-6 col-xs-8 nopadding">
+            <div class="col-md-2 col-sm-6 col-xs-8 nopadding logo">
                 <a class="navbar-brand nomargin" href="{{url('/')}}">
                     <img src="{{ asset($settings['logo']) }}" alt="logo">
                 </a>
@@ -16,7 +16,7 @@
                 <div class="navbar-header page-scroll">
                     <button type="button" class="navbar-toggle toggle-menu menu-right push-body" data-toggle="collapse"
                             data-target="#main-nav" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
+                        <span class="sr-only"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
