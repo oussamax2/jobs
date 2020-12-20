@@ -13,7 +13,6 @@
 
             <!-- ======== Start of Main Menu ======== -->
             <div class="col-md-10 col-sm-6 col-xs-4 nopadding">
-            <div>  *********** </div>
                 <div class="navbar-header page-scroll">
                     <button type="button" class="navbar-toggle toggle-menu menu-right push-body" data-toggle="collapse"
                             data-target="#main-nav" aria-expanded="false">

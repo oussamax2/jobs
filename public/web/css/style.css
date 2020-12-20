@@ -1876,11 +1876,14 @@ nav.navbar {
 }
 
 .navbar-brand img {
-    max-height: 90px;
+    max-height: 55px;
    
     cursor: pointer;
 }
-
+@media (min-width:992px){
+a.navbar-brand.nomargin {
+    padding: 0px 0px !important;
+}}
 div#main-nav {
     padding-top: 20px;
 }
