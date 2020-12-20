@@ -10,8 +10,8 @@
 
                 <!-- Your Logo Here -->
                 <a href="{{ route('front.home') }}">
-                    <img src="{{ asset($settings['logo']) }}" alt="">
-                    <span class="app-name">{{ $settings['application_name'] }}</span>
+                    <img src="{{ asset('web/img/logo-footer.png') }}" alt="">
+                   
                 </a>
 
                 <!-- Small Description -->
@@ -82,7 +82,7 @@
         <div class="container">
 
             <div class="col-md-6 col-sm-6 col-xs-12">
-                <span>{{ __('web.footer.copyright') }} &copy; <a href="//www.infyom.com/" class="text-blue">{{ $settings['application_name'] }}.</a> {{ __('web.footer.all_rights_reserved') }}</span>
+                <span>{{ __('web.footer.copyright') }} &copy; <a href="#" class="text-blue">{{ $settings['application_name'] }}.</a> {{ __('web.footer.all_rights_reserved') }}</span>
             </div>
 
             <div class="col-md-6 col-sm-6 col-xs-12">

@@ -23,6 +23,7 @@ return [
     'logout'          => 'الخروج',
     'go_to_dashboard' => 'لوحة القيادة',
     'post_of'         => 'وظيفة',
+    'job_seekers'     => 'الباحثين عن عمل',
 
     //common keys
     'common'          => [
@@ -59,6 +60,7 @@ return [
         'opened_jobs'                      => 'الوظائف المفتوحة',
         'featured_companies_not_available' => 'الشركات المميزة غير متوفرة',
         'notices'                          => 'إشعارات',
+        'featured_jobs' => 'وظائف مميزة ',
     ],
 
     //jobs menu keys
