@@ -2,7 +2,7 @@
     $settings  = settings();
 @endphp
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <!-- Mobile viewport optimized -->
