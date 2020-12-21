@@ -125,10 +125,10 @@ return [
     ],
 
     'front_home'            => [
-        'candidates' => 'المرشحون',
-        'jobs'       => 'وظائف',
-        'resumes'    => 'يستأنف',
-        'companies'  => 'الشركات',
+        'candidates' => 'مرشح',
+        'jobs'       => 'وظيفة',
+        'resumes'    => 'سيرة ذاتية',
+        'companies'  => 'شركة',
     ],
 
     // dashboard keys.
