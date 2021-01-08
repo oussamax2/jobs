@@ -21,7 +21,7 @@
     </div>
     <div class="form-group col-sm-3">
         {{ Form::label('marital_status', __('messages.candidate.marital_status').':') }}
-        <p>{{ $candidate->maritalStatus->marital_status }}</p>
+        <p>{{ !empty($candidate->maritalStatus->marital_status)?$candidate->maritalStatus->marital_status:__('messages.common.n/a') }}</p>
     </div>
     <div class="form-group col-sm-3">
         {{ Form::label('skill', __('messages.candidate.candidate_skill').':') }}
