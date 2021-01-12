@@ -6,7 +6,7 @@
   overflow: hidden;
   border: 1px solid #e1e4fc;
   border-radius: 8px;
-  background-image: linear-gradient(130deg, #087fff 38%, #cce4ff 123%) !important;
+  background-image: linear-gradient(130deg, #367c36 38%, #3c763dba 123%) !important;
   color: #fff;
 }
 
@@ -22,7 +22,7 @@
   color: #ffffff;
   position: relative;
   overflow: hidden;
-  background-image: linear-gradient(130deg, #087fff 38%, #cce4ff 123%) !important;
+  background-image: linear-gradient(130deg, #3e813e 38%, #cce4ff 123%) !important;
 }
 
 .category-listing:nth-child(5) {
@@ -41,7 +41,7 @@
 }
 
 .category-listing:nth-child(5) .top-categories {
-  background-image:linear-gradient(130deg, #087fff 38%, #cce4ff 123%) !important;
+  background-image:linear-gradient(130deg, #367c36 38%, #3c763dba 123%) !important;
   width: 22%;
   margin: auto;
   position: relative !important;

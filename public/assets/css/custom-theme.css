@@ -3,11 +3,11 @@
 }
 
 #main-nav .simple-menu a:focus {
-  color: #087fff !important;
+  color: #3e813e !important;
 }
 
 .overlay-black:before {
-  background-image: linear-gradient(130deg, #087fff 38%, #cce4ff  123%) !important;
+  
 }
 
 .alert.alert-warning {
@@ -17,7 +17,7 @@
 
 .job-search-form .btn-purple {
   background: #fff;
-  color: #087fff !important;
+  color: #3e813e !important;
   border: 0;
   border-radius: 5px;
 }
@@ -75,11 +75,11 @@ section#job-page .company-info .job-company a img {
 }
 
 section#job-page .job-overview li h5 i {
-  color: #087fff;
+  color: #3e813e;
 }
 
 section#job-page .label.label-info {
-  background-color: #087fff;
+  background-color: #3e813e;
 }
 
 .job-post-wrapper .single-job-post .job-title,
@@ -92,16 +92,16 @@ section#job-page .label.label-info {
 }
 
 section.page-header:after {
-  background: linear-gradient(130deg, #087fff 38%, #cce4ff  123%) !important;;
+  background: linear-gradient(130deg, #3e813e 38%, #cce4ff  123%) !important;;
   opacity: 1;
 }
 
 .back-top {
-  background: linear-gradient(to right, #087fff 60%, #cce4ff 150%);
+  background: linear-gradient(to right, #3e813e 60%, #cce4ff 150%);
 }
 
 .about-process .process-icon {
-  background: #087fff !important;
+  background: #3e813e !important;
 }
 
 .about-process h5.step-no {
@@ -110,19 +110,19 @@ section.page-header:after {
 }
 
 .blog-sidebar .widget-title:after {
-  background: #087fff;
+  background: #3e813e;
 }
 
 section#login .login-box .login-title {
-  background: #087fff;
+  background: #3e813e;
 }
 
 section#login .login-box .login-title:before {
-  background: #087fff;
+  background: #3e813e;
 }
 
 footer .footer-info:before {
-  background: #087fff;
+  background: #3e813e;
 }
 
 footer .copyright {
