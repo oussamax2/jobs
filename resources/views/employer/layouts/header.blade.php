@@ -1,6 +1,6 @@
 <div class="navbar-bg"></div>
 <nav class="navbar navbar-expand-lg main-navbar mb-0 pb-0">
-    <a href="{{ route('front.home') }}" class="navbar-brand sidebar-gone-hide">{{ config('app.name') }}</a>
+    <a href="{{ route('front.home') }}" class="navbar-brand sidebar-gone-hide"><img src="{{ getLogoUrl() }}" width="70px" class="navbar-brand-full"/></a>
     <div class="navbar-nav">
         <a href="#" class="nav-link sidebar-gone-show" data-toggle="sidebar"><i class="fas fa-bars"></i></a>
     </div>
@@ -84,12 +84,12 @@
                     <span>{{ __('messages.employer_menu.followers') }}</span>
                 </a>
             </li>
-            <li class="nav-item {{ Request::is('employer/manage-subscriptions*') ? 'active' : ''}}">
+           {{-- <li class="nav-item {{ Request::is('employer/manage-subscriptions*') ? 'active' : ''}}">
                 <a class="nav-link" href="{{ route('manage-subscription.index') }}">
                     <i class="fa fa-dollar-sign dollar-sign-icon"></i>
                     <span>{{ __('messages.employer_menu.manage_subscriptions') }}</span>
                 </a>
-            </li>
+            </li> --}}
         </ul>
     </div>
 </nav>

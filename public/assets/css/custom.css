@@ -494,8 +494,8 @@ div.dataTables_wrapper div.dataTables_processing {
 }
 
 .sidebar-brand img {
-  max-height: 50px;
-  max-width: 50px;
+  max-height: 150px;
+  max-width: 150px;
 }
 
 .section-header .public-profile {

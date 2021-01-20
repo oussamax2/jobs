@@ -27,10 +27,7 @@
     </section>
 @endsection
 @push('scripts')
-    <script>
-        let planUrl = "{{ route('plans.index') }}";
-        let planSaveUrl = "{{ route('plans.store') }}";
-    </script>
+   
     <script src="{{ asset('assets/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ mix('assets/js/custom/custom-datatable.js') }}"></script>
     <script src="{{ asset('js/currency.js') }}"></script>

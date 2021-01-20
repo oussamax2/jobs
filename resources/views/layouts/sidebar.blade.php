@@ -1,7 +1,6 @@
 <aside id="sidebar-wrapper">
     <div class="sidebar-brand">
-        <img src="{{ getLogoUrl() }}" width="70px" class="navbar-brand-full"/>&nbsp;&nbsp;
-        <a href="{{ url('/') }}">{{ config('app.name') }}</a>
+        <img src="{{ getLogoUrl() }}" width="150px" class="navbar-brand-full"/>&nbsp;&nbsp;
         <div class="input-group px-3">
             <input type="text" class="form-control searchTerm" id="searchText" placeholder="Search Menu"
                    autocomplete="off">
@@ -131,7 +130,7 @@
                 </li>
             </ul>
         </li>
-        <li class="nav-item side-menus dropdown">
+     {{-- <!-- <li class="nav-item side-menus dropdown">
             <a class="nav-link has-dropdown" href="#"><i class="fas fa-solar-panel"></i>
                 <span>{{ __('messages.plan.subscriptions') }}</span>
             </a>
@@ -149,13 +148,14 @@
                     </a>
                 </li>
             </ul>
-        </li>
+        
         <li class="side-menus {{ Request::is('admin/subscribers*') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('subscribers.index') }}">
                 <i class="fas fa-bell"></i>
                 <span>{{ __('messages.subscribers') }}</span>
             </a>
         </li>
+        </li> -->--}}
         <li class="nav-item dropdown side-menus">
             <a class="nav-link has-dropdown" href="#"><i class="fas fa-cogs"></i>
                 <span>{{ __('messages.general') }}</span>

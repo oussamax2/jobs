@@ -477,6 +477,13 @@ return [
         'resume_not_found'         => 'استئناف غير متوفر.',
         'reported_candidates'      => 'المرشحون المعلنون',
         'reporte_to_candidate'     => 'أبلغ المرشحين',
+        'Personal information'     => 'معلومات شخصية',
+        'Contact Information'     => 'معلومات للتواصل',
+        '1 month'     => 'شهر واحد',
+        '2 month'     => '2 أشهر',
+        '3 month'     => '3 أشهر',
+        'other'     => ' آخر',
+        
     ],
 
     'candidate_dashboard' => [

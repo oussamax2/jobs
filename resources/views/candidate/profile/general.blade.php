@@ -55,14 +55,7 @@
                 </div>
             </div>
         </div>
-        <div class="form-group col-sm-6 ">
-            {{ Form::label('skill_id', __('messages.candidate.candidate_skill').':', ['class' => 'font-weight-bolder']) }}
-            <span
-                    class="text-danger">*</span>
-            <div class="w-100">
-                {{Form::select('candidateSkills[]',$data['skills'], (count($candidateSkills) > 0)?$candidateSkills:null, ['class' => 'form-control  ','id'=>'skillId','multiple'=>true,'required'])}}
-            </div>
-        </div>
+   
         <div class="form-group col-sm-6">
             {{ Form::label('language_id', __('messages.candidate.candidate_language').':', ['class' => 'font-weight-bolder']) }}
             <span
@@ -99,7 +92,7 @@
             {{ Form::select('visa_status', $data['visaStatus'], isset($user->candidate->visa_status) ? $user->candidate->visa_status : null, ['class' => 'form-control','id' => 'visa_status','placeholder'=>'Select visa']) }}
         </div>
         <div class="form-group col-sm-6">
-            {{ Form::label('driving_license ', __('messages.company.Driving license ').':', ['class' => 'font-weight-bolder']) }} {{isset($user->candidate->driving_license)? getCountryName($user->candidate->driving_license): "NO"}}
+            {{ Form::label('driving_license ', __('messages.candidate.Driving license').':', ['class' => 'font-weight-bolder']) }} {{isset($user->candidate->driving_license)? getCountryName($user->candidate->driving_license): "NO"}}
             {{ Form::select('driving_license', $data['countries'], !empty($user->candidate->driving_license) ? getCountryName($user->candidate->driving_license) : null, ['id'=>'countryId','class' => 'form-control','placeholder' => 'Select Country']) }}
         </div>
      
@@ -116,6 +109,14 @@
         </div>
         <div class="form-group col-sm-12"><h2> {{__('messages.candidate.experience')}} :</h2></div>
         </br>
+        <div class="form-group col-sm-6 ">
+            {{ Form::label('skill_id', __('messages.candidate.candidate_skill').':', ['class' => 'font-weight-bolder']) }}
+            <span
+                    class="text-danger">*</span>
+            <div class="w-100">
+                {{Form::select('candidateSkills[]',$data['skills'], (count($candidateSkills) > 0)?$candidateSkills:null, ['class' => 'form-control  ','id'=>'skillId','multiple'=>true,'required'])}}
+            </div>
+        </div>
         <div class="form-group col-sm-6">
             {{ Form::label('experience', __('messages.candidate.experience').':', ['class' => 'font-weight-bolder']) }}
             <span>({{ __('messages.candidate.in_years') }})</span>
@@ -176,7 +177,7 @@
                     <input type="radio" id="x_month" name="immediate_available" class="custom-control-input" value="4"
                             {{ isset($user->candidate->immediate_available) ? ($user->candidate->immediate_available == 4 ? 'checked' : '') : 'checked' }} >
                     <label class="custom-control-label"
-                           for="x_month">{{ __('messages.candidate.auther') }}</label>
+                           for="x_month">{{ __('messages.candidate.other') }}</label>
                 </div>
                     
             </div>
