@@ -13,8 +13,8 @@ return [
 
     //header keys
     'home'            => 'الصفحة الرئيسية',
-    'jobs'            => 'وظيفة',
-    'companies'       => 'شركة',
+    'jobs'            => 'الوظائف',
+    'companies'       => 'الشركات',
     'about_us'        => 'معلومات عنا',
     'contact_us'      => 'اتصل بنا',
     'blogs'           => 'المدونات',
@@ -56,7 +56,7 @@ return [
         'jobs_offers_for'                  => 'عروض الوظائف',
         'you'                              => 'أنت',
         'position_opened'                  => 'تم فتح المركز',
-        'latest_job_not_available'         => 'أحدث الوظيفة غير متوفرة',
+        'latest_job_not_available'         => 'أحدث الوظائف غير متوفرة',
         'opened_jobs'                      => 'الوظائف المفتوحة',
         'featured_companies_not_available' => 'الشركات المميزة غير متوفرة',
         'notices'                          => 'إشعارات',

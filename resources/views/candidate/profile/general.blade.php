@@ -6,9 +6,12 @@
     {{ Form::open(['route' => 'candidate-profile.update', 'files' => true]) }}
     <div class="alert alert-danger d-none" id="validationErrors"></div>
     <div class="row">
-        <div class="form-group col-sm-6">
+    <div class="form-group col-sm-12"><h2> {{__('messages.candidate.Personal information')}} :</h2></div>
+        </br>
+        <div class="form-group col-sm-12">
+       
             <div class="row">
-                <div class="col-sm-6 col-xs-6 col-md-6 col-xl-3 col-6">
+                <div class="col-sm-8 col-xs-8 col-md-8 col-xl-3 col-8">
                     {{ Form::label('profile', __('messages.candidate.profile').':', ['class' => 'font-weight-bolder']) }}
                     <label class="image__file-upload text-white"> {{ __('messages.common.choose') }}
                         {{ Form::file('image',['id'=>'profile','class' => 'd-none']) }}
@@ -28,15 +31,9 @@
             {{ Form::label('last_name',__('messages.candidate.last_name').':', ['class' => 'font-weight-bolder']) }}<span class="text-danger">*</span>
             {{ Form::text('last_name', $user->last_name, ['class' => 'form-control','required']) }}
         </div>
-        <div class="form-group col-sm-6">
-            {{ Form::label('email',__('messages.candidate.email').':', ['class' => 'font-weight-bolder']) }}<span class="text-danger">*</span>
-            {{ Form::text('email', $user->email, ['class' => 'form-control','required']) }}
-        </div>
+        
 
-        <div class="form-group col-sm-6">
-            {{ Form::label('father_name',__('messages.candidate.father_name').':', ['class' => 'font-weight-bolder']) }}
-            {{ Form::text('father_name', $user->candidate->father_name, ['class' => 'form-control']) }}
-        </div>
+    
         <div class="form-group col-sm-6">
             {{ Form::label('dob', __('messages.candidate.birth_date').':', ['class' => 'font-weight-bolder']) }}
             {{ Form::text('dob', $user->dob, ['class' => 'form-control','id' => 'birthDate','autocomplete' => 'off']) }}
@@ -58,14 +55,7 @@
                 </div>
             </div>
         </div>
-        <div class="form-group col-sm-6 ">
-            {{ Form::label('skill_id', __('messages.candidate.candidate_skill').':', ['class' => 'font-weight-bolder']) }}
-            <span
-                    class="text-danger">*</span>
-            <div class="w-100">
-                {{Form::select('candidateSkills[]',$data['skills'], (count($candidateSkills) > 0)?$candidateSkills:null, ['class' => 'form-control  ','id'=>'skillId','multiple'=>true,'required'])}}
-            </div>
-        </div>
+   
         <div class="form-group col-sm-6">
             {{ Form::label('language_id', __('messages.candidate.candidate_language').':', ['class' => 'font-weight-bolder']) }}
             <span
@@ -82,10 +72,7 @@
             {{ Form::label('nationality', __('messages.candidate.nationality').':', ['class' => 'font-weight-bolder']) }}
             {{ Form::text('nationality', isset($user->candidate->nationality) ? $user->candidate->nationality : null, ['class' => 'form-control']) }}
         </div>
-        <div class="form-group col-sm-6">
-            {{ Form::label('national_id_card', __('messages.candidate.national_id_card').':', ['class' => 'font-weight-bolder']) }}
-            {{ Form::text('national_id_card', isset($user->candidate->national_id_card) ? $user->candidate->national_id_card : null, ['class' => 'form-control']) }}
-        </div>
+        
         <div class="form-group col-sm-6">
             {{ Form::label('country', __('messages.company.country').':', ['class' => 'font-weight-bolder']) }}
             {{ Form::select('country_id', $data['countries'], !empty($user->country_id) ? $user->candidate->country_name : null, ['id'=>'countryId','class' => 'form-control','placeholder' => 'Select Country']) }}
@@ -99,8 +86,36 @@
             {{ Form::select('city_id', (isset($cities) && $cities!=null?$cities:[]), isset($user->city_id) ? $user->city_name : null, ['id'=>'cityId','class' => 'form-control','placeholder' => 'Select City']) }}
         </div>
         <div class="form-group col-sm-6">
+            {{ Form::label('visa_status', __('messages.candidate.Visa Status').':', ['class' => 'font-weight-bolder']) }}
+            <span
+                    class="text-danger">*</span>
+            {{ Form::select('visa_status', $data['visaStatus'], isset($user->candidate->visa_status) ? $user->candidate->visa_status : null, ['class' => 'form-control','id' => 'visa_status','placeholder'=>'Select visa']) }}
+        </div>
+        <div class="form-group col-sm-6">
+            {{ Form::label('driving_license ', __('messages.candidate.Driving license').':', ['class' => 'font-weight-bolder']) }} {{isset($user->candidate->driving_license)? getCountryName($user->candidate->driving_license): "NO"}}
+            {{ Form::select('driving_license', $data['countries'], !empty($user->candidate->driving_license) ? getCountryName($user->candidate->driving_license) : null, ['id'=>'countryId','class' => 'form-control','placeholder' => 'Select Country']) }}
+        </div>
+     
+        <div class="form-group col-sm-12"><h2>{{__('messages.candidate.Contact Information')}} :</h2></div>
+        </br>
+        
+        <div class="form-group col-sm-12">
             {{ Form::label('phone', __('messages.candidate.phone').':', ['class' => 'font-weight-bolder']) }}
             {{ Form::text('phone', isset($user->phone) ? $user->phone : null, ['class' => 'form-control', 'onkeyup' => 'if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,"")', 'minlength' => '10', 'maxlength' => '10']) }}
+        </div>
+        <div class="form-group col-sm-12">
+            {{ Form::label('email',__('messages.candidate.email').':', ['class' => 'font-weight-bolder']) }}<span class="text-danger">*</span>
+            {{ Form::text('email', $user->email, ['class' => 'form-control','required']) }}
+        </div>
+        <div class="form-group col-sm-12"><h2> {{__('messages.candidate.experience')}} :</h2></div>
+        </br>
+        <div class="form-group col-sm-6 ">
+            {{ Form::label('skill_id', __('messages.candidate.candidate_skill').':', ['class' => 'font-weight-bolder']) }}
+            <span
+                    class="text-danger">*</span>
+            <div class="w-100">
+                {{Form::select('candidateSkills[]',$data['skills'], (count($candidateSkills) > 0)?$candidateSkills:null, ['class' => 'form-control  ','id'=>'skillId','multiple'=>true,'required'])}}
+            </div>
         </div>
         <div class="form-group col-sm-6">
             {{ Form::label('experience', __('messages.candidate.experience').':', ['class' => 'font-weight-bolder']) }}
@@ -135,22 +150,39 @@
             {{ Form::label('immediate_available', __('messages.candidate.immediate_available').':', ['class' => 'font-weight-bolder']) }}
             <div class="form-group mb-1">
                 <div class="custom-control custom-radio">
-                    <input type="radio" id="available" name="immediate_available" class="custom-control-input" value="1"
-                            {{ isset($user->candidate->immediate_available) ? ($user->candidate->immediate_available == 1 ? 'checked' : '') : 'checked' }}>
+                    <input type="radio" id="available" name="immediate_available" class="custom-control-input" value="0"
+                            {{ isset($user->candidate->immediate_available) ? ($user->candidate->immediate_available == 0 ? 'checked' : '') : 'checked' }} >
                     <label class="custom-control-label"
                            for="available">{{ __('messages.candidate.immediate_available') }}</label>
                 </div>
-            </div>
-            <div class="form-group mb-1">
                 <div class="custom-control custom-radio">
-                    <input type="radio" id="not_available" name="immediate_available" class="custom-control-input"
-                           value="0"
-                            {{ isset($user->candidate->immediate_available) ? ($user->candidate->immediate_available == 0 ? 'checked' : '') : '' }}>
+                    <input type="radio" id="1_month" name="immediate_available" class="custom-control-input" value="1"
+                            {{ isset($user->candidate->immediate_available) ? ($user->candidate->immediate_available == 1 ? 'checked' : '') : 'checked' }} >
                     <label class="custom-control-label"
-                           for="not_available">{{ __('messages.candidate.not_immediate_available') }}</label>
+                           for="1_month">{{ __('messages.candidate.1 month') }}</label>
                 </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="2_month" name="immediate_available" class="custom-control-input" value="2"
+                            {{ isset($user->candidate->immediate_available) ? ($user->candidate->immediate_available == 3 ? 'checked' : '') : 'checked' }} >
+                    <label class="custom-control-label"
+                           for="2_month">{{ __('messages.candidate.2 month') }}</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="3_month" name="immediate_available" class="custom-control-input" value="3"
+                            {{ isset($user->candidate->immediate_available) ? ($user->candidate->immediate_available == 3 ? 'checked' : '') : 'checked' }} >
+                    <label class="custom-control-label"
+                           for="3_month">{{ __('messages.candidate.3 month') }}</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="x_month" name="immediate_available" class="custom-control-input" value="4"
+                            {{ isset($user->candidate->immediate_available) ? ($user->candidate->immediate_available == 4 ? 'checked' : '') : 'checked' }} >
+                    <label class="custom-control-label"
+                           for="x_month">{{ __('messages.candidate.other') }}</label>
+                </div>
+                    
             </div>
-        </div>
+           
+            </div>
         <div class="form-group col-xl-6 col-md-6 col-sm-12">
             {{ Form::label('facebook_url', __('messages.company.facebook_url').':') }}
             <div class="input-group">
@@ -206,10 +238,7 @@
                 {{ Form::text('pinterest_url', $user->pinterest_url, ['class' => 'form-control']) }}
             </div>
         </div>
-        <div class="form-group col-sm-12">
-            {{ Form::label('address', __('messages.candidate.address').':', ['class' => 'font-weight-bolder']) }}
-            {{ Form::textarea('address', isset($user->candidate->address) ? $user->candidate->address : null, ['class' => 'form-control','rows'=>'5']) }}
-        </div>
+      
     </div>
 
     <div class="row mt-4">

@@ -84,6 +84,8 @@ class Candidate extends Model implements HasMedia
         'father_name',
         'marital_status_id',
         'nationality',
+        'visa_status',
+        'driving_license',
         'national_id_card',
         'experience',
         'career_level_id',

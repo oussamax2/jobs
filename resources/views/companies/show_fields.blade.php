@@ -13,19 +13,19 @@
     </div>
     <div class="form-group col-xl-6 col-md-6 col-sm-12">
         {{ Form::label('ceo', __('messages.company.employer_ceo').':') }}
-        <p>{{ $company->ceo }}</p>
+        <p>{{ !empty($company->ceo) ? $company->ceo:__('messages.common.n/a') }}</p>
     </div>
     <div class="form-group col-xl-6 col-md-6 col-sm-12">
         {{ Form::label('industry_id', __('messages.company.industry').':') }}
-        <p>{{ $company->industry->name }}</p>
+        <p>{{ !empty($company->industry->name) ? $company->industry->name :__('messages.common.n/a') }}</p>
     </div>
     <div class="form-group col-xl-6 col-md-6 col-sm-12">
         {{ Form::label('ownership_type_id', __('messages.company.ownership_type').':') }}
-        <p>{{ $company->ownerShipType->name }}</p>
+        <p>{{ !empty($company->ownerShipType->name) ? $company->ownerShipType->name :__('messages.common.n/a') }}</p>
         </div>
         <div class="form-group col-xl-6 col-md-6 col-sm-12">
             {{ Form::label('company_size_id', __('messages.company.company_size').':') }}
-            <p>{{ $company->companySize->size }}</p>
+            <p>{{ !empty($company->companySize->size) ? $company->companySize->size :__('messages.common.n/a') }}</p>
         </div>
         <div class="form-group col-xl-12 col-md-12 col-sm-12">
             {{ Form::label('details', __('messages.company.employer_details').':') }}
@@ -33,7 +33,7 @@
         </div>
         <div class="form-group col-xl-6 col-md-6 col-sm-12">
             {{ Form::label('established_in', __('messages.company.established_in').':') }}
-            <p>{{ $company->established_in }}</p>
+            <p>{{ !empty($company->established_in) ? $company->established_in :__('messages.common.n/a') }}</p>
         </div>
         <div class="form-group col-xl-6 col-md-6 col-sm-12">
             {{ Form::label('location', __('messages.company.location').':') }}

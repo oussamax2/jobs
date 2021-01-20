@@ -493,6 +493,15 @@ return [
         'resume_not_found'         => 'Resume Not Available.',
         'reported_candidates'      => 'Reported Candidates',
         'reporte_to_candidate'     => 'Report To Candidates',
+        'reporte_to_candidate'     => 'Rapporter aux candidats',
+        'Personal information'     => 'Personal information',
+        'Contact Information'     => 'Contact Information ',
+        '1 month'     => '1 month',
+        '2 month'     => '2 month',
+        '3 month'     => '3 month',
+        'other'     => ' Other',
+        'Visa Status'     => ' Visa Status',
+        'Driving license'     => ' Driving license',
     ],
 
     'candidate_dashboard' => [

@@ -299,7 +299,7 @@ Route::group(['middleware' => ['auth', 'role:Admin', 'xss', 'verified.user'], 'p
         'CandidateController@deleteReportedCandidate')->name('delete.reported.candidate');
 
     // plans routes
-    Route::get('plans', 'PlanController@index')->name('plans.index');
+   /* Route::get('plans', 'PlanController@index')->name('plans.index');
     Route::post('plans', 'PlanController@store')->name('plans.store');
     Route::get('plans/{plan}/edit', 'PlanController@edit')->name('plans.edit');
     Route::put('plans/{plan}', 'PlanController@update')->name('plans.update');
@@ -307,7 +307,7 @@ Route::group(['middleware' => ['auth', 'role:Admin', 'xss', 'verified.user'], 'p
     Route::post('plans/{plan}/change-trial-plan', 'PlanController@changeTrialPlan')->name('plans.change-trial-plan');
 
     // transactions route
-    Route::get('transactions', 'TransactionController@index')->name('transactions.index');
+    Route::get('transactions', 'TransactionController@index')->name('transactions.index');*/
     Route::get('invoices/{invoiceId}', 'TransactionController@getTransactionInvoice');
 
     // Front setting routes
@@ -373,7 +373,7 @@ Route::group(['middleware' => ['auth', 'role:Employer', 'xss', 'verified.user'],
     Route::get('followers', 'CompanyController@getFollowers')->name('followers.index');
     Route::post('/report-to-candidate', 'CandidateController@reportCandidate')->name('report.to.candidate');
 
-    Route::get('manage-subscriptions', 'SubscriptionController@index')->name('manage-subscription.index');
+   // Route::get('manage-subscriptions', 'SubscriptionController@index')->name('manage-subscription.index');
     Route::post('purchase-subscription', 'SubscriptionController@purchaseSubscription')->name('purchase-subscription');
     Route::post('purchase-trial-subscription',
         'SubscriptionController@purchaseTrialSubscription')->name('purchase-trial-subscription');

@@ -1,6 +1,6 @@
 <div class="navbar-bg"></div>
 <nav class="navbar navbar-expand-lg main-navbar mb-0 pb-0">
-    <a href="{{ route('front.home') }}" class="navbar-brand sidebar-gone-hide">{{ config('app.name') }}</a>
+    <a href="{{ route('front.home') }}" class="navbar-brand sidebar-gone-hide"><img src="{{ getLogoUrl() }}" width="100px" class="navbar-brand-full"/></a>
     <div class="navbar-nav">
         <a href="#" class="nav-link sidebar-gone-show" data-toggle="sidebar"><i class="fas fa-bars"></i></a>
     </div>

@@ -44,6 +44,7 @@ class CandidateRepository extends BaseRepository
         'experience',
         'career_level_id',
         'industry_id',
+        'visa_status',
         'functional_area_id',
         'current_salary',
         'expected_salary',
@@ -78,6 +79,7 @@ class CandidateRepository extends BaseRepository
         $countries = new Countries();
         $data['countries'] = getCountries();
         $data['maritalStatus'] = MaritalStatus::pluck('marital_status', 'id');
+        $data['visaStatus'] = ["citizen"=>"citizen","r_visa_transferable"=>"Residence visa transferable","visit_visa"=>"visit visa","tourist_visa"=>"tourist visa"];
         $data['careerLevel'] = CareerLevel::pluck('level_name', 'id');
         $data['industry'] = Industry::pluck('name', 'id');
         $data['functionalArea'] = FunctionalArea::pluck('name', 'id');
@@ -186,7 +188,7 @@ class CandidateRepository extends BaseRepository
             
             $userInput = Arr::only($input,
                 [
-                    'first_name', 'last_name', 'email', 'password', 'phone',
+                    'first_name', 'last_name', 'email', 'password', 'phone','visa_status',
                     'country_id', 'state_id', 'city_id', 'gender', 'dob', 'facebook_url', 'twitter_url', 'linkedin_url',
                     'pinterest_url', 'google_plus_url',
                 ]);

@@ -481,6 +481,12 @@ return [
         'resume_not_found'         => 'CV ne pas A Disponible.',
         'reported_candidates'      => 'Candidats signalés',
         'reporte_to_candidate'     => 'Rapporter aux candidats',
+        'Personal information'     => 'Informations personnelles',
+        'Contact Information'     => 'Informations de contact ',
+        '1 month'     => '1 mois',
+        '2 month'     => '2 mois',
+        '3 month'     => '3 mois',
+        'other'     => ' autre',
     ],
 
     'candidate_dashboard' => [
