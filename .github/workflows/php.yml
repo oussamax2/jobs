@@ -7,12 +7,13 @@ jobs:
     name: FTP-Deploy-Action
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2.1.0
-      with:
+     - uses: actions/checkout@v2.3.2
+       with:
         fetch-depth: 2
-    - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@3.1.1
-      with:
-        ftp-server: ftp://ftp.job.b2bservices.tn/public_html
-        ftp-username: job
-        ftp-password: Job@Bon2020Gest
+     - name: FTP-Deploy-Action
+       uses: SamKirkland/FTP-Deploy-Action@4.0.0
+       with:
+         server: ftp.job.b2bservices.tn
+         username: job
+         password: Job@Bon2020Gest
+         server-dir: public_html/
