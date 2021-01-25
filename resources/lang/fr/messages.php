@@ -8,6 +8,7 @@ return [
     |--------------------------------------------------------------------------
     |
     */
+    
     //menu.blade keys
     'dashboard'              => 'Tableau de bord',
     'job_categories'         => 'Emploi Catégories',
