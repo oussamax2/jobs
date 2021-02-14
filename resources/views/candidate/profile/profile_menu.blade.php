@@ -10,9 +10,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('candidate.profile',['section' => 'career_informations']) }}"
-                           class="nav-link {{ (isset($data['sectionName']) && $data['sectionName'] == 'career_informations') ? 'active' : ''}}">
-                            {{ __('messages.career_informations') }}
+                        <a href="{{ route('candidate.profile',['section' => 'career_informations_exp']) }}"
+                           class="nav-link {{ (isset($data['sectionName']) && $data['sectionName'] == 'career_informations_exp') ? 'active' : ''}}">
+                            {{ __('messages.candidate_profile.experience') }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('candidate.profile',['section' => 'career_informations_edu']) }}"
+                           class="nav-link {{ (isset($data['sectionName']) && $data['sectionName'] == 'career_informations_edu') ? 'active' : ''}}">
+                            {{ __('messages.candidate_profile.education') }}
                         </a>
                     </li>
                     <li class="nav-item">

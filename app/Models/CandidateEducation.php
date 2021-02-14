@@ -59,7 +59,6 @@ class CandidateEducation extends Model
         'degree_title' => 'required',
         'country_id'   => 'required',
         'institute'    => 'required',
-        'result'       => 'required',
         'year'         => 'required',
     ];
     public $table = 'candidate_educations';
@@ -73,6 +72,9 @@ class CandidateEducation extends Model
         'institute',
         'result',
         'year',
+        'e_from',
+        'e_to',
+
     ];
     /**
      * The attributes that should be casted to native types.
@@ -88,7 +90,9 @@ class CandidateEducation extends Model
         'city_id'         => 'integer',
         'institute'       => 'string',
         'result'          => 'string',
-        'year'            => 'integer',
+        'year'            => 'date',
+        'e_from'            => 'date',
+        'e_to'            => 'date',
     ];
 
     /**

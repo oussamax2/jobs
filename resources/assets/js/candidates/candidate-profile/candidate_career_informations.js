@@ -293,6 +293,7 @@ $(document).ready(function () {
                             }]);
                     $('#editInstitute').val(result.data.institute);
                     $('#editResult').val(result.data.result);
+                    $('#edite_to').val(result.data.e_to);
                     $('#editYear').val(result.data.year).trigger('change');
                     $('#editEducationModal').appendTo('body').modal('show');
                 }
