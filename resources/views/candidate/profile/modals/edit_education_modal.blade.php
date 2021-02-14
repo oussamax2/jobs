@@ -6,8 +6,6 @@
                 <h5 class="modal-title">{{ __('messages.candidate_profile.edit_education') }}</h5>
                 <button type="button" aria-label="Close" class="close" data-dismiss="modal">×</button>
             </div>
-           {{var_dump($candidateEducation->candidate_id)}}
-          
             {{ Form::open(['id'=>'editEducationForm']) }}
             <div class="modal-body">
                 <div class="alert alert-danger d-none" id="editValidationErrorsBox"></div>
