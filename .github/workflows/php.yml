@@ -13,7 +13,7 @@ jobs:
      - name: FTP-Deploy-Action
        uses: SamKirkland/FTP-Deploy-Action@4.0.0
        with:
-         server: ftp.job.b2bservices.tn
-         username: job
-         password: Job@Bon2020Gest
+         server: 162.241.226.61
+         username: proxihrc
+         password: Burlb!rd79
          server-dir: public_html/
