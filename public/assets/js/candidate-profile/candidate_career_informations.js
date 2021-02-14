@@ -347,6 +347,7 @@ $(document).ready(function () {
             cityId: result.data.city_id
           }]);
           $('#editInstitute').val(result.data.institute);
+          $('#edite_to').val(result.data.e_to);
           $('#editResult').val(result.data.result);
           $('#editYear').val(result.data.year).trigger('change');
           $('#editEducationModal').appendTo('body').modal('show');

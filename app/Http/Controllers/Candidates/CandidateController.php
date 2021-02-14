@@ -77,7 +77,7 @@ class CandidateController extends AppBaseController
             $data['resumes'] = $candidate->getMedia('resumes');
         }
         
-        if ($sectionName == 'career_informations') {
+        if ($sectionName == 'career_informations_exp' || $sectionName == 'career_informations_edu') {
             $data['candidateExperiences'] = CandidateExperience::where('candidate_id',
                 $user->owner_id)->orderByDesc('id')->get();
             foreach ($data['candidateExperiences'] as $experience) {

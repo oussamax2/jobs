@@ -36,11 +36,11 @@
                     <div class="form-group col-sm-6">
                         {{ Form::label('start_date', __('messages.candidate_profile.start_date').':') }}<span
                                 class="text-danger">*</span>
-                        {{ Form::text('start_date', null, ['class' => 'form-control','id' => 'startDate','autocomplete' => 'off', 'required']) }}
+                        {{ Form::month('start_date', null, ['class' => 'form-control','id' => '','autocomplete' => 'off', 'required']) }}
                     </div>
                     <div class="form-group col-sm-6">
                         {{ Form::label('end_date', __('messages.candidate_profile.end_date').':') }}
-                        {{ Form::text('end_date', null, ['class' => 'form-control','id' => 'endDate','autocomplete' => 'off']) }}
+                        {{ Form::month('end_date', null, ['class' => 'form-control','id' => '','autocomplete' => 'off']) }}
                     </div>
                     <div class="form-group col-sm-6 mb-0 pt-3">
                         <label>{{ __('messages.candidate_profile.currently_working') }}</label>
