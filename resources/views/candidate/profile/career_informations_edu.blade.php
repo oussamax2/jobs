@@ -49,11 +49,11 @@
     </section>
  
     @include('candidate.profile.modals.add_education_modal')
- 
     @include('candidate.profile.modals.edit_education_modal')
     @include('candidate.profile.templates.templates')
 @endsection
 @push('page-scripts')
+
     <script>
         let addExperienceUrl = "{{ route('candidate.create-experience') }}";
         let experienceUrl = "{{ url('candidate/candidate-experience') }}/";
