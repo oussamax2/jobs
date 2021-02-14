@@ -59,9 +59,7 @@
     <br>
     
     @include('candidate.profile.modals.add_experience_modal')
-
     @include('candidate.profile.modals.edit_experience_modal')
-
     @include('candidate.profile.templates.templates')
 @endsection
 @push('page-scripts')
