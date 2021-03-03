@@ -35,8 +35,8 @@
 
     
         <div class="form-group col-sm-6">
-            {{ Form::label('dob', __('messages.candidate.birth_date').':', ['class' => 'font-weight-bolder']) }}
-            {{ Form::text('dob', $user->dob, ['class' => 'form-control','id' => 'birthDate','autocomplete' => 'off']) }}
+            {{ Form::label('dob', __('messages.candidate.birth_date').':', ['class' => 'font-weight-bolder']) }}<span class="text-danger">*</span>
+            {{ Form::text('dob', $user->dob, ['class' => 'form-control','required','id' => 'birthDate','autocomplete' => 'off']) }}
         </div>
         <div class="form-group col-sm-6">
             {{ Form::label('gender', __('messages.candidate.gender').':', ['class' => 'font-weight-bolder']) }}<span class="text-danger">*</span>
@@ -56,12 +56,7 @@
             </div>
         </div>
    
-        <div class="form-group col-sm-6">
-            {{ Form::label('language_id', __('messages.candidate.candidate_language').':', ['class' => 'font-weight-bolder']) }}
-            <span
-                    class="text-danger">*</span>
-            {{Form::select('candidateLanguage[]',$data['language'], (count($candidateLanguage) > 0) ? $candidateLanguage : null, ['class' => 'form-control','id'=>'languageId','multiple'=>true,'required'])}}
-        </div>
+  
         <div class="form-group col-sm-6">
             {{ Form::label('marital_status', __('messages.candidate.marital_status').':', ['class' => 'font-weight-bolder']) }}
             <span
@@ -70,7 +65,8 @@
         </div>
         <div class="form-group col-sm-6">
             {{ Form::label('nationality', __('messages.candidate.nationality').':', ['class' => 'font-weight-bolder']) }}
-            {{ Form::text('nationality', isset($user->candidate->nationality) ? $user->candidate->nationality : null, ['class' => 'form-control']) }}
+           
+            {{ Form::select('nationality', $data['countries'], !empty($user->country_id) ? $user->candidate->nationality : null, ['id'=>'nationality','class' => 'form-control','placeholder' => 'Select Country']) }}
         </div>
         
         <div class="form-group col-sm-6">
@@ -146,12 +142,20 @@
             {{ Form::label('salary_currency', __('messages.candidate.salary_currency').':', ['class' => 'font-weight-bolder']) }}
             {{ Form::select('salary_currency', $data['currency'], isset($user->candidate->salary_currency) ? $user->candidate->salary_currency : null, ['class' => 'form-control', 'id' => 'salaryCurrencyId']) }}
         </div>
+        <div class="form-group col-sm-12"><h2> {{__('messages.candidate.candidate_language')}} :</h2></div>
         <div class="form-group col-sm-6">
-            {{ Form::label('immediate_available', __('messages.candidate.immediate_available').':', ['class' => 'font-weight-bolder']) }}
+            {{ Form::label('language_id', __('messages.candidate.candidate_language').':', ['class' => 'font-weight-bolder']) }}
+            <span
+                    class="text-danger">*</span>
+            {{Form::select('candidateLanguage[]',$data['language'], (count($candidateLanguage) > 0) ? $candidateLanguage : null, ['class' => 'form-control','id'=>'languageId','multiple'=>true,'required'])}}
+        </div>
+        <div class="form-group col-sm-12"><h2> {{__('messages.candidate.Availability to join')}} :</h2></div>
+        <div class="form-group col-sm-6">
+            {{ Form::label('immediate_available', __('messages.candidate.Availability to join').':', ['class' => 'font-weight-bolder']) }}
             <div class="form-group mb-1">
                 <div class="custom-control custom-radio">
                     <input type="radio" id="available" name="immediate_available" class="custom-control-input" value="0"
-                            {{ isset($user->candidate->immediate_available) ? ($user->candidate->immediate_available == 0 ? 'checked' : '') : 'checked' }} >
+                            {{ isset($user->candidate->immediate_available) ? ($user->candidate->immediate_available == 0 ? 'checked' : '') : 'checked' }} required>
                     <label class="custom-control-label"
                            for="available">{{ __('messages.candidate.immediate_available') }}</label>
                 </div>
@@ -183,6 +187,7 @@
             </div>
            
             </div>
+            <div class="col-lg-12"></div>
         <div class="form-group col-xl-6 col-md-6 col-sm-12">
             {{ Form::label('facebook_url', __('messages.company.facebook_url').':') }}
             <div class="input-group">

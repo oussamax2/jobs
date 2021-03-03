@@ -36,8 +36,18 @@
                                     class="fa fa-angle-double-right"></i>{{ __('web.jobs') }}</a></li>
                     <li><a href="{{ route('front.company.lists') }}"><i
                                     class="fa fa-angle-double-right"></i>{{ __('web.companies') }}</a></li>
-                    <li><a href="{{ route('front.candidate.lists')}}"><i
+                                    @auth
+                        @role('Employer')
+                        <li><a href="{{ route('front.candidate.lists')}}"><i
                                     class="fa fa-angle-double-right"></i>{{ __('web.job_seekers') }}</a></li>
+                        @endrole
+                        @role('Admin')
+                        <li><a href="{{ route('front.candidate.lists')}}"><i
+                                    class="fa fa-angle-double-right"></i>{{ __('web.job_seekers') }}</a></li>
+                        @endrole
+                        @endauth
+                 
+
                     <li><a href="{{ route('front.about.us') }}"><i
                                     class="fa fa-angle-double-right"></i>{{ __('web.about_us') }}</a></li>
                     <li><a href="{{ route('front.contact') }}"><i
