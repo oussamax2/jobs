@@ -314,7 +314,9 @@ Route::group(['middleware' => ['auth', 'role:Admin', 'xss', 'verified.user'], 'p
     Route::get('front-settings', 'FrontSettingsController@index')->name('front.settings.index');
     Route::post('front-settings', 'FrontSettingsController@update')->name('front.settings.update');
 });
-
+Route::group( ['namespace' => 'Web', 'middleware' => ['auth', 'role:Admin|Employer', 'xss', 'verified.user']], function () {
+    Route::get('/candidate-lists', 'CandidateController@getCandidatesLists')->name('front.candidate.lists'); 
+});
 Route::group(['middleware' => ['auth', 'role:Admin|Employer|Candidate', 'xss', 'verified.user']], function () {
     Route::get('states-list', 'JobController@getStates')->name('states-list');
     Route::get('cities-list', 'JobController@getCities')->name('cities-list');
@@ -388,7 +390,7 @@ Route::group(['namespace' => 'Web', 'middleware' => ['xss']], function () {
     Route::get('/search-jobs', 'JobController@index')->name('front.search.jobs');
     Route::get('/job-details/{uniqueId?}', 'JobController@jobDetails')->name('front.job.details');
     Route::get('/company-lists', 'CompanyController@getCompaniesLists')->name('front.company.lists');
-    Route::get('/candidate-lists', 'CandidateController@getCandidatesLists')->name('front.candidate.lists');
+    //Route::get('/candidate-lists', 'CandidateController@getCandidatesLists')->name('front.candidate.lists');
     Route::get('/company-details/{uniqueId?}', 'CompanyController@getCompaniesDetails')->name('front.company.details');
     Route::get('/about-us', 'AboutUsController@FAQLists')->name('front.about.us');
     Route::get('/candidate-profile', function () {

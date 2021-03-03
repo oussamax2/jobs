@@ -39,10 +39,20 @@
                             <a href="{{ route('front.company.lists') }}"
                                class="j-nav-item">{{ __('web.companies') }}</a>
                         </li>
+                        @auth
+                        @role('Employer')
                         <li class="simple-menu {{ Request::is('candidate-lists') ? 'active' : '' }}">
                             <a href="{{ route('front.candidate.lists') }}"
                                class="j-nav-item">{{ __('web.job_seekers') }}</a>
                         </li>
+                        @endrole
+                        @role('Admin')
+                        <li class="simple-menu {{ Request::is('candidate-lists') ? 'active' : '' }}">
+                            <a href="{{ route('front.candidate.lists') }}"
+                               class="j-nav-item">{{ __('web.job_seekers') }}</a>
+                        </li>
+                        @endrole
+                        @endauth
                         <li class="simple-menu {{ Request::is('about-us') ? 'active' : '' }}">
                             <a href="{{ route('front.about.us') }}" class="j-nav-item">{{ __('web.about_us') }}</a>
                         </li>
