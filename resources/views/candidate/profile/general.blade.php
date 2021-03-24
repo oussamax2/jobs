@@ -1,6 +1,12 @@
 @extends('candidate.profile.index')
 @push('page-css')
     <link rel="stylesheet" href="{{ asset('css/bootstrap-datetimepicker.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/css/intlTelInput.min.css" />
+<style>
+input#phone {
+    padding-left: 40px;
+}
+</style>
 @endpush
 @section('section')
     {{ Form::open(['route' => 'candidate-profile.update', 'files' => true]) }}
@@ -96,8 +102,8 @@
         </br>
         
         <div class="form-group col-sm-12">
-            {{ Form::label('phone', __('messages.candidate.phone').':', ['class' => 'font-weight-bolder']) }}
-            {{ Form::text('phone', isset($user->phone) ? $user->phone : null, ['class' => 'form-control', 'onkeyup' => 'if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,"")', 'minlength' => '10', 'maxlength' => '10']) }}
+            {{ Form::label('phone', __('messages.candidate.phone').':', ['class' => 'font-weight-bolder']) }}<span class="text-danger">*</span><br>
+            {{ Form::tel('phone', isset($user->phone) ? $user->phone : null, ['class' => 'form-control', 'required']) }}
         </div>
         <div class="form-group col-sm-12">
             {{ Form::label('email',__('messages.candidate.email').':', ['class' => 'font-weight-bolder']) }}<span class="text-danger">*</span>
@@ -261,8 +267,36 @@
     let cityId = '{{$user->city_id}}';
     let isEdit = true;
 </script>
+
 @push('page-scripts')
     <script src="{{ asset('js/bootstrap-datetimepicker.min.js') }}"></script>
     <script src="{{mix('assets/js/custom/input_price_format.js')}}"></script>
     <script src="{{mix('assets/js/candidate-profile/candidate-general.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/intlTelInput.min.js"></script>
+    <script>
+    var input = document.querySelector("#phone");
+    window.intlTelInput(input, {
+      // allowDropdown: false,
+       autoHideDialCode: false,
+      // autoPlaceholder: "off",
+      // dropdownContainer: document.body,
+      // excludeCountries: ["us"],
+       formatOnDisplay: true,
+      geoIpLookup: function(callback) {
+        $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+           var countryCode = (resp && resp.country) ? resp.country : "";
+          callback(countryCode);
+        });
+      },
+     //  hiddenInput: "phone",
+      // initialCountry: "auto",
+      // localizedCountries: { 'de': 'Deutschland' },
+      // nationalMode: false,
+      // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+      // placeholderNumberType: "MOBILE",
+      // preferredCountries: ['cn', 'jp'],
+      // separateDialCode: true,
+     
+    });
+  </script>
 @endpush
