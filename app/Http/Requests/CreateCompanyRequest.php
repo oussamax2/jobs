@@ -28,7 +28,7 @@ class CreateCompanyRequest extends FormRequest
         $rules['name'] = 'required';
         $rules['email'] = 'required|unique:users,email';
         $rules['password'] = 'required|same:password_confirmation|min:6';
-        $rules['phone'] = 'nullable|min:10|max:10';
+        $rules['phone'] = 'nullable';
 
         return $rules;
     }

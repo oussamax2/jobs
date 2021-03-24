@@ -32,7 +32,7 @@ class CandidateUpdateProfileRequest extends FormRequest
             'last_name'             => 'required',
             'email'                 => 'required|email|unique:users,email,'.$id,
             'dob'                   => 'nullable|date',
-            'phone'                 => 'nullable|min:10|max:10',
+            'phone'                 => 'nullable',
             'marital_status_id'     => 'required',
             'password'              => 'nullable|min:6|required_with:password_confirmation|same:password_confirmation',
             'password_confirmation' => 'nullable|min:6',

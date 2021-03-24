@@ -125,7 +125,7 @@ class Candidate extends Model implements HasMedia
         'password'          => 'nullable|same:password_confirmation|min:6',
         'gender'            => 'required',
         'dob'               => 'nullable|date',
-        'phone'             => 'nullable|min:10|max:10',
+        'phone'             => 'nullable',
         'marital_status_id' => 'required',
     ];
 

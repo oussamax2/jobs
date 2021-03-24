@@ -27,7 +27,7 @@ class UpdateCandidateProfileRequest extends FormRequest
         $rules = [
             'first_name' => 'required',
             'last_name'  => 'required',
-            'phone'      => 'nullable|min:10|max:10',
+            'phone'      => 'nullable',
         ];
 
         return $rules;

@@ -30,7 +30,7 @@ class UpdateUserProfileRequest extends FormRequest
             'first_name' => 'required',
             'last_name'  => 'nullable',
             'email'      => 'required|email|unique:users,email,'.$id.'|regex:/^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/',
-            'phone'      => 'nullable|min:10|max:10',
+            'phone'      => 'nullable',
         ];
 
         return $rules;
