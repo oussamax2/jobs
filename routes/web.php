@@ -226,6 +226,7 @@ Route::group(['middleware' => ['auth', 'role:Admin', 'xss', 'verified.user'], 'p
     Route::get('candidates/create', 'CandidateController@create')->name('candidates.create');
     Route::post('candidates', 'CandidateController@store')->name('candidates.store');
     Route::get('candidates/{candidate}/edit', 'CandidateController@edit')->name('candidates.edit');
+    Route::get('candidates-cv/{candidate}', 'CandidateController@getcv')->name('candidates.pdf');
     Route::get('candidates/{candidate}', 'CandidateController@show')->name('candidates.show');
     Route::put('candidates/{candidate}', 'CandidateController@update')->name('candidates.update');
     Route::delete('candidates/{candidate}', 'CandidateController@destroy')->name('candidates.destroy');

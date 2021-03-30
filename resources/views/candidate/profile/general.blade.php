@@ -103,7 +103,7 @@ input#phone {
         
         <div class="form-group col-sm-12">
             {{ Form::label('phone', __('messages.candidate.phone').':', ['class' => 'font-weight-bolder']) }}<span class="text-danger">*</span><br>
-            {{ Form::tel('phone', isset($user->phone) ? $user->phone : null, ['class' => 'form-control', 'required']) }}
+            {{ Form::tel('phone', isset($user->phone) ? $user->phone : null, ['class' => 'form-control', 'required' ,'onkeyup' => 'if (/[^0-9\.+]/g.test(this.value)) this.value = this.value.replace(/[^0-9\.+]/g,"")']) }}
         </div>
         <div class="form-group col-sm-12">
             {{ Form::label('email',__('messages.candidate.email').':', ['class' => 'font-weight-bolder']) }}<span class="text-danger">*</span>
@@ -288,14 +288,16 @@ input#phone {
           callback(countryCode);
         });
       },
-     //  hiddenInput: "phone",
+      hiddenInput: "phone",
       // initialCountry: "auto",
       // localizedCountries: { 'de': 'Deutschland' },
       // nationalMode: false,
       // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
       // placeholderNumberType: "MOBILE",
       // preferredCountries: ['cn', 'jp'],
-      // separateDialCode: true,
+      separateDialCode: true,
+      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js",
+
      
     });
   </script>

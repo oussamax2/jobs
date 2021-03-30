@@ -20,6 +20,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use Illuminate\View\View;
 use Yajra\DataTables\DataTables;
+use PDF;
 
 class CandidateController extends AppBaseController
 {
@@ -78,7 +79,14 @@ class CandidateController extends AppBaseController
 
         return redirect(route('candidates.index'));
     }
+/** download pdf  */
 
+public function getcv(Candidate $candidate)
+{
+    $currency = SalaryCurrency::pluck('currency_name', 'id');
+    return PDF::loadView('candidates.cv',compact('candidate'))->setPaper('a4', 'portail')->setWarnings(false)->stream('download.pdf');
+     
+}
     /**
      * Display the specified Candidate.
      *
