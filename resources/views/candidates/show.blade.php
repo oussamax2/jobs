@@ -9,6 +9,8 @@
             <div class="section-header-breadcrumb">
                 <a href="{{ route('candidates.edit',$candidate->id) }}"
                    class="btn btn-warning form-btn float-right mr-2">{{ __('messages.common.edit') }}</a>
+                   <a href="{{ route('candidates.pdf',$candidate->id) }}"
+                   class="btn btn-danger form-btn float-right mr-2">{{ __('cv pdf') }}</a>
                 <a href="{{ route('candidates.index') }}"
                    class="btn btn-primary form-btn float-right">{{ __('messages.common.back') }}</a>
             </div>
