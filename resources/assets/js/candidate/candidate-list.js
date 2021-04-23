@@ -35,6 +35,7 @@ let tbl = $('#candidatesTbl').DataTable({
         },
         {
             'targets': [5],
+            'width': '5%',
             'visible': false,
         },
     ],

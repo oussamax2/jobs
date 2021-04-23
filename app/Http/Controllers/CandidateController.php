@@ -6,6 +6,8 @@ use App\Http\Requests\CreateCandidateRequest;
 use App\Http\Requests\UpdateCandidateRequest;
 use App\Models\Candidate;
 use App\Models\SalaryCurrency;
+use App\Models\CandidateExperience;
+use App\Models\CandidateEducation;
 use App\Queries\CandidateDataTable;
 use App\Queries\ReportedCandidateDataTable;
 use App\ReportedToCandidate;
@@ -82,9 +84,11 @@ class CandidateController extends AppBaseController
 /** download pdf  */
 
 public function getcv(Candidate $candidate)
-{
+{ $experiences = CandidateExperience::where('candidate_id',$candidate->id)->get();
+    $educations = CandidateEducation::where('candidate_id',$candidate->id)->get();
+    
     $currency = SalaryCurrency::pluck('currency_name', 'id');
-    return PDF::loadView('candidates.cv',compact('candidate'))->setPaper('a4', 'portail')->setWarnings(false)->stream('download.pdf');
+    return PDF::loadView('candidates.cv',compact('candidate','experiences','educations'))->setPaper('a4', 'portail')->setWarnings(false)->stream($candidate->user->full_name .'.pdf');
      
 }
     /**

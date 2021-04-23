@@ -6,7 +6,7 @@
             <th scope="col">{{ __('messages.candidate.email') }}</th>
             <th scope="col">{{ __('messages.candidate.industry') }}</th>
             <th scope="col">{{ __('messages.common.status') }}</th>
-            <th scope="col">{{ __('messages.common.action') }}</th>
+            <th scope="col" style="width=50px">{{ __('messages.common.action') }}</th>
         </tr>
         </thead>
         <tbody>
