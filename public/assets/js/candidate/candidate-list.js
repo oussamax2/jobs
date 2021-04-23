@@ -125,12 +125,13 @@ var tbl = $('#candidatesTbl').DataTable({
     'orderable': false
   }, {
     'targets': [5],
+    'width': '5%',
     'visible': false
   }],
   columns: [{
     data: function data(row) {
       var showUrl = candidateUrl + '/' + row.id;
-      return '<a href="' + showUrl + '">' + row.user.full_name + '</a>';
+      return '<a  href="' + showUrl + '">' + row.user.full_name + '</a>';
     },
     name: 'user.first_name'
   }, {
@@ -158,9 +159,11 @@ var tbl = $('#candidatesTbl').DataTable({
   }, {
     data: function data(row) {
       var url = candidateUrl + '/' + row.id;
+      var urlcv = candidateUrl + '-cv/' + row.id;
       var data = [{
         'id': row.id,
-        'url': url + '/edit'
+        'url': url + '/edit',
+        'urlcv': urlcv 
       }];
       return prepareTemplateRender('#candidateActionTemplate', data);
     },

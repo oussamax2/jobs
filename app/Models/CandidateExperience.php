@@ -100,4 +100,15 @@ class CandidateExperience extends Model
     {
         return $this->belongsTo(Candidate::class, 'candidate_id');
     }
+
+
+        /**
+     *
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function country()
+    {
+        return $this->belongsTo(Country::class, 'country_id');
+    }
 }

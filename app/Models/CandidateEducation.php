@@ -110,4 +110,15 @@ class CandidateEducation extends Model
     {
         return $this->belongsTo(RequiredDegreeLevel::class, 'degree_level_id');
     }
+
+           /**
+     *
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function country()
+    {
+        return $this->belongsTo(Country::class, 'country_id');
+    }
+
 }

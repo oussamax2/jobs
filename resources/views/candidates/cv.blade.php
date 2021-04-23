@@ -4,8 +4,7 @@
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta name=Generator content="Microsoft Word 15 (filtered)">
 <style>
-<!--
- /* Font Definitions */
+
  @font-face
 	{font-family:Helvetica;
 	panose-1:0 0 0 0 0 0 0 0 0 0;}
@@ -191,30 +190,51 @@ div.WordSection1
 	{margin-bottom:0in;}
 ul
 	{margin-bottom:0in;}
--->
+  header {
+                position: fixed;
+                top: -75px;
+                left: 0px;
+                right: 0px;
+                height: 50px;
+                
+                color: rgb(3, 3, 3);
+                text-align: center;
+                line-height: 35px;
+            }
+            footer {
+                position: fixed; 
+                bottom: -25px; 
+                left: 0px; 
+                right: 0px;
+                height: 30px; 
+                color: #3e813e;
+                text-align: center;
+                line-height: 20px;
+            }
 </style>
 
 </head>
 
 <body lang=EN-US style='word-wrap:break-word'>
-
+  <header>
+  <br>
+  <img width="120px"  src="{{ asset('web/img/cv.png') }}" alt="logo">
+</header>
+<footer>
+<hr>
+ProxiHR, Address: PO Box 32422, Doha Qatar. Tel +974 44786329, Email: contact@proxihr.com  
+</footer>
 <div class=WordSection1>
 
 
 
-<table cellpadding=0 cellspacing=0 align=left>
+<table cellpadding=0 cellspacing=0 align=right>
 
   <td></td>
-  <td><img width=200 height=200 src="{{ $candidate->user->avatar }}"></td>
+  <td><img style="float:right;" width=200 height=200 src="{{ $candidate->user->avatar }}"></td>
  </tr>
 </table>
 
-<span lang=EN-GB>&nbsp;</span></p>
-
-<br >
-<br >
-<br ><br >
-<br >
 <br >
 <br >
 <br >
@@ -235,9 +255,8 @@ ul
   height:29.9pt'>
   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
   class=PersonalInfoChar><span style='font-size:10.0pt'><span style='font-size:
-  9.0pt;font-weight:normal'>[</span>Phone<span style='font-size:9.0pt;
-  font-weight:normal'>]</span></span></span></p>
-  <p class=PersonalInfo>[E-mail]</p>
+  9.0pt;font-weight:normal'>{{ $candidate->user->phone }}</span></span></span></p>
+  <p class=PersonalInfo>{{ $candidate->user->email }}</p>
   <p class=PersonalInfo>&nbsp;</p>
   </td>
   <td width="50%" valign=bottom style='width:50.34%;padding:.7pt 5.75pt .7pt 5.75pt;
@@ -249,13 +268,12 @@ ul
  <tr style='height:29.9pt'>
   <td width="49%" colspan=2 valign=bottom style='width:49.66%;padding:.7pt 5.75pt .7pt 5.75pt;
   height:29.9pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Profile: Gender
-  age , Marital status, Nationality: Current Location: Doha, Qatar</p>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Profile: {{\Carbon\Carbon::parse($candidate->user->dob)->age}} years old , {{$candidate->MaritalStatus->marital_status}}, {{$candidate->nationality}}<br> Current Location: {{ $candidate->full_location }}</p>
   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Current
-  position : </p>
+  position : {{$candidate->functionalArea->name}}</p>
   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Company : </p>
   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Notice period
-  : </p>
+  : {{$candidate->careerLevel->level_name}}, {{$candidate->experience}} years</p>
   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>&nbsp;</p>
   <p class=PersonalInfo>&nbsp;</p>
   </td>
@@ -293,28 +311,17 @@ ul
   </td>
   <td width="78%" colspan=2 valign=top style='width:78.42%;border:none;
   border-bottom:solid #F2F2F2 1.0pt;padding:.7pt 5.75pt .7pt 5.75pt'>
+  @foreach ($educations as $education)
   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
   class=ContentBodyChar><b><span style='font-size:14.0pt'><span
-  style='font-size:11.0pt;color:windowtext'>Degree</span><span
-  style='font-size:11.0pt;color:windowtext'> 1</span></span></b></span></p>
+  style='font-size:11.0pt;color:windowtext'>{{$education->degree_title}}</span>
   <p class=BulletedListCxSpFirst style='margin-left:0in;text-indent:0in'><span
-  style='font-size:10.0pt'>University Name , Country</span></p>
+  style='font-size:10.0pt'>{{$education->institute}} , {{$education->country->name}}</span></p>
   <p class=BulletedListCxSpLast style='margin-left:0in;text-indent:0in'><span
-  style='font-size:10.0pt'>(Start Date - End Date) </span></p>
+  style='font-size:10.0pt'>({{date_format($education->e_from,"Y-m-d")}} - {{date_format($education->e_to,"Y-m-d")}}) </span></p>
   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
   style='font-size:10.0pt;color:#404040'>&nbsp;</span></p>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
-  class=ContentBodyChar><b><span style='font-size:14.0pt'><span
-  style='font-size:11.0pt;color:windowtext'>Degree</span><span
-  style='font-size:11.0pt;color:windowtext'> 2</span></span></b></span></p>
-  <p class=BulletedListCxSpFirst style='margin-left:0in;text-indent:0in'><span
-  style='font-size:10.0pt'>University Name , Country</span></p>
-  <p class=BulletedListCxSpMiddle style='margin-left:0in;text-indent:0in'><span
-  style='font-size:10.0pt'>(Start Date - End Date)          </span></p>
-  <p class=BulletedListCxSpMiddle style='margin-left:0in;text-indent:0in'><span
-  style='font-size:10.0pt'>&nbsp;</span></p>
-  <p class=BulletedListCxSpLast style='margin-left:0in;text-indent:0in'><i><span
-  style='font-size:10.0pt'>(Add more as applicable)</span></i></p>
+  @endforeach
   </td>
  </tr>
  <tr>
@@ -351,45 +358,19 @@ ul
   </td>
   <td width="78%" colspan=2 valign=top style='width:78.42%;border:none;
   border-bottom:solid #F2F2F2 1.0pt;padding:.7pt 5.75pt .7pt 5.75pt'>
-  <p class=ContentBodyBold><span style='font-size:11.0pt'>Institution Name ,
-  Country</span></p>
+  @foreach ($experiences as $experience)
+  <p class=ContentBodyBold><span style='font-size:11.0pt'>{{$experience->company}} ,
+  {{$experience->country->name}}</span></p>
   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
-  class=ContentBodyChar><span style='font-size:10.0pt'>Job Title</span></span></p>
+  class=ContentBodyChar><span style='font-size:10.0pt'>{{$experience->experience_title}}</span></span></p>
   <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
-  class=ContentBodyChar><span style='font-size:10.0pt'>(Start Date – End Date)</span></span></p>
+  class=ContentBodyChar><span style='font-size:10.0pt'>({{date_format($experience->start_date,"Y-m")}} – {{date_format($experience->end_date,"Y-m")}})</span></span></p>
   <p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;text-indent:-.25in;
   line-height:normal'><span style='font-size:10.0pt;font-family:Symbol;
   color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  </span></span><span style='font-size:10.0pt;color:black;background:white'>Responsibility
-  1</span></p>
-  <p class=MsoListParagraphCxSpLast style='margin-bottom:0in;text-indent:-.25in;
-  line-height:normal'><span class=ContentBodyChar><span style='font-size:10.0pt;
-  font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  </span></span></span><span style='font-size:10.0pt;color:black;background:
-  white'>Responsibility 2</span></p>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
-  class=ContentBodyChar><span style='font-size:10.0pt'>&nbsp;</span></span></p>
-  <p class=ContentBodyBold><span style='font-size:11.0pt'>Institution Name ,
-  Country</span></p>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
-  class=ContentBodyChar><span style='font-size:10.0pt'>Job Title</span></span></p>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
-  class=ContentBodyChar><span style='font-size:10.0pt'>(Start Date – End Date)</span></span></p>
-  <p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;text-indent:-.25in;
-  line-height:normal'><span style='font-size:10.0pt;font-family:Symbol;
-  color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  </span></span><span style='font-size:10.0pt;color:black;background:white'>Responsibility
-  1</span></p>
-  <p class=MsoListParagraphCxSpLast style='margin-bottom:0in;text-indent:-.25in;
-  line-height:normal'><span style='font-size:10.0pt;font-family:Symbol;
-  color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  </span></span><span style='font-size:10.0pt;color:black;background:white'>Responsibility
-  2</span></p>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
-  style='font-size:10.0pt;font-family:"Helvetica",sans-serif;color:black;
-  background:white'>&nbsp;</span></b></p>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><i><span
-  style='font-size:10.0pt'>(Add more as applicable)</span></i></p>
+  </span></span><span style='font-size:10.0pt;color:black;background:white'>{{$experience->description}}</span></p>
+  
+@endforeach
   </td>
  </tr>
  <tr>
