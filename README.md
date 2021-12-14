@@ -1,4 +1,4 @@
-# InfyJobs
+# Jobs
 
 
 ### Process to setup project : 
